@@ -158,5 +158,30 @@ SELECT
  customer_id, 
  company_name,
  contact_name,
+-----------------------------------------------------------------
+--Using where
+SELECT customer_id, company_name, city, country
+FROM customers_2024
+WHERE country = 'Germany'
+
+UNION
+
+SELECT customer_id, company_name, city, country
+FROM customers_2025
+WHERE country = 'Germany';
+
+
+--Using group by
+
+SELECT country, COUNT(*) AS count_c
+FROM customers_2024
+GROUP BY country
+UNION
+SELECT country, COUNT(*) AS count_c
+FROM customers_2025
+GROUP BY country;
+
+
+    
  mail_address
   from customers_2025;
